@@ -1,9 +1,9 @@
 class Counter
 
 #this is where you determine what is shared between classes.
-  def initialize
+  def initialize(number)
     #puts "init"
-    @number = 0
+    @number = number
   end
 
   def up
@@ -19,27 +19,30 @@ class Counter
 
   end
 
-  def reset
+  def reset(num=0) #setting a default value for the argument so that if there is NOT an argument it will set to 0
+      @number = num
     puts "reset"
-    @number = 0
+
   end
 
 end
 
-c = Counter.new
-d = Counter.new
+c = Counter.new 5
+d = Counter.new 10
+
 
 c.up
 d.up
 c.up
 
 puts c.count  # 2
-puts d.count
+puts d.count  # 1
 
 
-c.reset
+c.reset 20
+d.reset
 
-puts c.count   # back to 0
+puts c.count   # 0
 
-puts d.count
+puts d.count   # 1
 
