@@ -10,28 +10,27 @@ class Fizzbuzzer
 
     while i <= number
 
-      if (i % 3) == 0 && (i % 5) == 0
-        puts "FizzBuzz"
-
-      elsif i % 3 == 0
+      if i % @number == 0
         puts "Fizz"
-
-      elsif i % 5 == 0
-        puts "Buzz"
 
       else
         puts i
+
       end
+
       i += 1
     end
 
   end
 
+  def replace(num, str)
+
+  end
+
 end
 
-
 f = Fizzbuzzer.new 3
-f.run(80)
+f.run(20)
 
 
 

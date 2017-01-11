@@ -102,6 +102,7 @@ end
 
 # what percentage of the time does the smart AI win the game
 # set up the game to play ~10,000 times and see how many result in winning
+# our game is deterministic. with this strategy, which number will the smartAI ALWAYS lose on?
 
 
 
