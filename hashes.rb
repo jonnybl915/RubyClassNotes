@@ -49,7 +49,7 @@ freq = letter_frequencies(str)
 puts "There are #{freq['a']} many a's"
 
 counts = letter_frequencies(File.read './warmups.rb')
-counts.delete(" ") 
+counts.delete(" ")
 puts counts
 
 # how many different letters are there?
