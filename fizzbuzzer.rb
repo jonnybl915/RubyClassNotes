@@ -1,36 +1,42 @@
 class Fizzbuzzer
 
-  def initialize(number)
-    @number = number
-
+  def initialize
+    @replacements = {}
   end
 
   def run(number)
-    i = 1
 
+    i = 1
+    
     while i <= number
 
-      if i % @number == 0
-        puts "Fizz"
+      @replacements.each do |k, v|
 
-      else
-        puts i
+        (i % k == 0) ? (puts v) : (puts i)
 
       end
 
       i += 1
+
     end
 
   end
 
-  def replace(num, str)
+  def replace (number, string)
+
+    @replacements[number] = string
 
   end
 
 end
 
-f = Fizzbuzzer.new 3
-f.run(20)
+#f = Fizzbuzzer.new 3
+#f.run(20)
+
+f = Fizzbuzzer.new
+f.replace(3, "Fizz")
+f.replace(5, "Buzz")
+f.run(16)
 
 
 
