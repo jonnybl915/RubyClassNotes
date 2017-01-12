@@ -77,12 +77,38 @@ puts words.count
 wordsThatEndInX = []
 
 words.each do |word|
+
   if word[-2] == "x"
+  #preferable --- word.chomp.end_with? 'x'
   wordsThatEndInX.push(word)
   end
 end
-
 puts wordsThatEndInX.count
 
+#using a select statement
+x_words = words.select do |word|
+  word.chomp.end_with? 'x'
 
+end
+puts x_words.count
+
+#2 Class practice
+# Write a person class where the following is runnable code
+
+class Person
+
+  def initialize(firstName, lastName)
+    @firstName = firstName
+    @lastName = lastName
+  end
+
+  def greet
+    puts "Hello, #{@firstName} #{@lastName}!"
+  end
+
+end
+
+p = Person.new("Jon", "Black")
+
+puts p.greet #=> should output "hello, Jon Black!"
 
