@@ -3,13 +3,32 @@ class Fizzbuzzer
   def initialize
     @replacements = {}
   end
+
   def register_new_rule(number, replacement)
-    @replacement = replacement
+    # Instance @replacements[2] = 'A'
+    @replacements[number] = replacement
   end
 
   def apply_one(n)
-    @replacement = n
+    @replacements.each do |base, replacement|
+      if n % base == 0
+        replacement
+      else
+        
+      end
+
+    end
+
+    #if n % @replacements[n] == 0
+    #  @replacement = n
+    #end
+
   end
+
+  def rule_for(number)
+    @replacements[number]
+  end
+
   def run(number)
 
     i = 1
@@ -31,12 +50,6 @@ class Fizzbuzzer
       i += 1
 
     end
-
-  end
-
-  def replace (number, string)
-
-    @replacements[number] = string
 
   end
 

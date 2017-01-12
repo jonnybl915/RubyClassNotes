@@ -51,4 +51,27 @@ describe Fizzbuzzer do
     expect(result).to eq 'Fizz'
   end
 
-end
+  it 'replaces multiples' do
+    f = Fizzbuzzer.new
+    f.register_new_rule(3, 'Fizz')
+
+    result = f.apply_one(6)
+
+    expect(result).to eq 'Fizz'
+  end
+
+  it 'can register multiple numbers' do
+    #given a FB
+    f = Fizzbuzzer.new
+
+    # When I register multiple numbers
+    f.register_new_rule(2, 'A')
+    f.register_new_rule(3, 'B')
+
+    expect(f.rule_for 2 ).to eq 'A'
+    expect(f.rule_for 3).to eq 'B'
+
+  end
+
+  it 'can apply multiple rules'
+  end
