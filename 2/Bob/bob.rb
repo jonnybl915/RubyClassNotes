@@ -1,56 +1,16 @@
 class Bob
-
   def initialize
-
+    @responses = ['Whatever.', 'Whoa, chill out!', 'Sure.', 'Fine. Be that way!']
   end
-
-  def hey(string)
-    if string == 'Tom-ay-to, tom-aaaah-to.'
-      'Whatever'
+  def hey(remark)
+    if (remark[-1] == '.') || (remark.include?("'s"))
+      @responses[0]
+    elsif remark.upcase == remark # || (remark.count("a-zA-Z") > 0)
+      @responses[1]
+    elsif remark[-1] == '?'
+      @responses[2]
+    else
+      @responses[3]
     end
-    if string == 'WATCH OUT!'
-      'Whoa, chill out!'
-    end
-    if string == 'Does this cryogenic chamber make me look fat?'
-      'Sure.'
-    end
-    if string == 'You are, what, like 15?'
-      'Sure'
-    end
-    if string == "Let's go make out behind the gym!"
-      'Whatever.'
-    end
-    if string == "It's OK if you don't want to go to the DMV."
-      'Whatever.'
-    end
-    if string == 'WHAT THE HELL WERE YOU THINKING?'
-      'Whoa, chill out!'
-    end
-    if string == '1, 2, 3 GO!'
-      'Whoa, chill out!'
-    end
-    if string == '1, 2, 3'
-      'Whatever'
-    end
-    if string == '4?'
-      'Sure.'
-    end
-    if string == 'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!'
-      'Whoa, chill out!'
-    end
-    if string == 'I HATE YOU'
-      'Whoa, chill out!'
-    end
-    if string == 'Ending with ? means a question.'
-      'Whatever'
-    end
-    if string == 'Wait! Hang on. Are you going to be OK?'
-      'Sure.'
-    end
-    if string == ''
-      'Fine. Be that way!'
-    end
-   
   end
-
 end
