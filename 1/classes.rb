@@ -46,3 +46,7 @@ puts c.count   # 0
 
 puts d.count   # 1
 
+# Thinking about testing: What do we need to test?
+# We want to make sure that the Counter is INCREMENTING correctly
+#
+

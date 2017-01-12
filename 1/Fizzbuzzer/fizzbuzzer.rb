@@ -3,7 +3,13 @@ class Fizzbuzzer
   def initialize
     @replacements = {}
   end
+  def register_new_rule(number, replacement)
+    @replacement = replacement
+  end
 
+  def apply_one(n)
+    @replacement = n
+  end
   def run(number)
 
     i = 1
