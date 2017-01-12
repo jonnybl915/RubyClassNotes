@@ -10,28 +10,36 @@ class Fizzbuzzer
   end
 
   def apply_one(n)
-    @replacements.each do |base, replacement|
-      if n % base == 0
-        replacement
-      else
-        
-      end
 
+    matches = @replacements.select do |base, replacement|
+       n % base == 0
     end
 
-    #if n % @replacements[n] == 0
-    #  @replacement = n
-    #end
+    if matches.count == 0
+     n
+    else
+      combined_matches = matches.values.join('');
 
+    end
+    puts combined_matches
   end
 
   def rule_for(number)
     @replacements[number]
   end
 
-  def run(number)
+  def run(range_max)
+#run method should
+    (1 .. range_max).to_a.map do |x|
 
-    i = 1
+      # this will run on any instance of the Fizzbuzzer class
+      #self.apply_one(x)
+
+      apply_one(x)
+
+    end
+
+
 
 #use logic to print i when the rule matches
 #if any of the rules work or multiple rules
@@ -39,17 +47,19 @@ class Fizzbuzzer
 #max.times do
 #upto(max) do
 
-    while i <= number
-
-      @replacements.each do |k, v|
-
-        (i % k == 0) ? (puts v) : (puts i)
-
-      end
-
-      i += 1
-
-    end
+   # ------ WRONG ------
+    # i = 1
+    # while i <= range_max
+    #
+    #   @replacements.each do |k, v|
+    #
+    #     (i % k == 0) ? (puts v) : (puts i)
+    #
+    #   end
+    #
+    #   i += 1
+    #
+    # end
 
   end
 
@@ -59,8 +69,8 @@ end
 #f.run(20)
 
 f = Fizzbuzzer.new
-f.replace(3, "Fizz")
-f.replace(5, "Buzz")
+f.register_new_rule(3, "Fizz")
+f.register_new_rule(5, "Buzz")
 f.run(16)
 
 

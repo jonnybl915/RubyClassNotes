@@ -10,8 +10,8 @@ describe Fizzbuzzer do
   skip 'actually works' do
     f = Fizzbuzzer.new
 
-    f.register_rule(4, 'Cat')
-    f.register_rule(5, 'Dog')
+    f.register_new_rule(4, 'Cat')
+    f.register_new_rule(5, 'Dog')
     results = [
         1,
         2,
@@ -73,5 +73,21 @@ describe Fizzbuzzer do
 
   end
 
-  it 'can apply multiple rules'
+  it 'can apply multiple rules' do
+    f = Fizzbuzzer.new
+
+    f.register_new_rule(4, 'Cat')
+    f.register_new_rule(5, 'Dog')
+
+    expect(f.apply_one 20).to eq 'CatDog'
   end
+
+  it 'can apply the second rule' do
+    f = Fizzbuzzer.new
+
+    f.register_new_rule(4, 'Cat')
+    f.register_new_rule(5, 'Dog')
+
+    expect(f.apply_one 5).to eq 'Dog'
+  end
+end
