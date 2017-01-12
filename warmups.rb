@@ -1,3 +1,5 @@
+#1/11
+
 # 1. print the numbers 1 to 100 using each
 
 #!! look up the ".." function
@@ -53,7 +55,7 @@ people = [
 #what does select do? it takes out an individual piece
 
 names = people.map { |person| person[:name]}
-puts names;
+#puts names;
 
 # longer method
 
@@ -61,7 +63,26 @@ namesArray = []
 people.each { |person|
   namesArray.push(person[:name]);
   }
-puts namesArray
+#puts namesArray
+
+
+#1/12
+
+#1 how many of thes words end with an x?
+#n.b. they currently all end in "\n"
+
+words = File.readlines "/usr/share/dict/words"
+puts words.count
+
+wordsThatEndInX = []
+
+words.each do |word|
+  if word[-2] == "x"
+  wordsThatEndInX.push(word)
+  end
+end
+
+puts wordsThatEndInX.count
 
 
 
