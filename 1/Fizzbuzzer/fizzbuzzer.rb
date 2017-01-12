@@ -11,14 +11,22 @@ class Fizzbuzzer
 
   def apply_one(n)
 
-    matches = @replacements.select do |base, replacement|
-       n % base == 0
+    # matches = @replacements.select do |base, replacement|
+    #    n % base == 0
+    # end
+
+    matches = []
+    @replacements.each do |base, replacement|
+      if n % base == 0
+        matches.push(replacement)
+      end
+
     end
 
-    if matches.count == 0
+    if matches.length == 0
      n
     else
-      combined_matches = matches.values.join('');
+      combined_matches = matches.join('');
 
     end
     puts combined_matches
