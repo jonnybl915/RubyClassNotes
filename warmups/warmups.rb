@@ -128,7 +128,7 @@ class Repeater
     #   @word
     # end
     # array.join("\n")
-    
+
     builder_array = []
     number.times do
       builder_array.push(@word_to_repeat)
