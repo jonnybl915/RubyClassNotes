@@ -112,3 +112,33 @@ p = Person.new("Jon", "Black")
 
 puts p.greet #=> should output "hello, Jon Black!"
 
+# 1/13
+
+
+#1 Repeater Class
+
+
+class Repeater
+  def initialize(string)
+    @word_to_repeat = string + "\n"
+  end
+  def repeat(number)
+
+    # array = n.times.map do
+    #   @word
+    # end
+    # array.join("\n")
+    
+    builder_array = []
+    number.times do
+      builder_array.push(@word_to_repeat)
+    end
+    builder_array.join("\n")
+  end
+end
+
+r = Repeater.new("Good")
+r.repeat(3)
+
+r2 = Repeater.new("Hello")
+r2.repeat(4)

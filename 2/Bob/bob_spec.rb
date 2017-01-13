@@ -54,7 +54,7 @@ describe Bob do
     expect(bob.hey remark).to eq 'Whoa, chill out!'
   end
 
-  skip 'can say only numbers' do
+  it 'can say only numbers' do
     remark = '1, 2, 3'
     expect(bob.hey remark).to eq 'Whatever.'
   end
@@ -84,22 +84,22 @@ describe Bob do
     expect(bob.hey remark).to eq 'Sure.'
   end
 
-  skip 'can be silent' do
+  it 'can be silent' do
     remark = ''
     expect(bob.hey remark).to eq 'Fine. Be that way!'
   end
 
-  skip 'can be really silent' do
+  it 'can be really silent' do
     remark = ' ' * rand(1..10)
     expect(bob.hey remark).to eq 'Fine. Be that way!'
   end
 
-  skip 'can alternate silences' do
+  it 'can alternate silences' do
     remark = "\t" * rand(1..10)
     expect(bob.hey remark).to eq 'Fine. Be that way!'
   end
 
-  skip 'can handle multiple line questions' do
+  it 'can handle multiple line questions' do
     remark = %(
 Does this cryogenic chamber make me look fat?
 no)
