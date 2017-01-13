@@ -1,3 +1,13 @@
+module Floopable
+  def something
+    "this is something in a module"
+  end
+end
+
+class FloopMixin
+  include Floopable # allows access to module
+end
+
 class A # implicit < Object
   def a_method
     "this is a method from the A class"
@@ -22,3 +32,5 @@ puts c.multiply(3)
 
 
 
+f = FloopMixin.new
+puts f.something
