@@ -142,3 +142,7 @@ r.repeat(3)
 
 r2 = Repeater.new("Hello")
 r2.repeat(4)
+
+
+
+
