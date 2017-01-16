@@ -18,17 +18,6 @@ class Item
   # end
 end
 
-describe Item do
-  it 'has a name' do
-    the_item = Item.new 'PB & J', 2
-    expect(the_item.name).to eq 'PB & J'
-  end
-  it 'has a price' do
-    the_item = Item.new 'PB & J', 2
-    expect(the_item.price).to eq 2
-  end
-end
-
 class Cart
   attr_reader :total_price
   def initialize
@@ -44,6 +33,23 @@ class Cart
       total += item.price
     end
     total
+  end
+end
+
+describe Item do
+
+  #  This line helps with using the same variables across multiple tests
+  #  Space saver and performance optimization
+  let(:the_item) { Item.new 'PB & J', 2}
+  ######################################
+
+  it 'has a name' do
+    # the_item = Item.new 'PB & J', 2
+    expect(the_item.name).to eq 'PB & J'
+  end
+  it 'has a price' do
+    # the_item = Item.new 'PB & J', 2
+    expect(the_item.price).to eq 2
   end
 end
 
